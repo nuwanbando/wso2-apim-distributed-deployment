@@ -5,6 +5,10 @@ RUN apt-get update && apt-get install -y \
         wget && \
         cd / && \
         wget https://raw.githubusercontent.com/nuwanbando/wso2-apim-distributed-deployment/master/artifacts/apimdb.sql && \
-        cp apimdb.sql /docker-entrypoint-initdb.d/
+        wget https://raw.githubusercontent.com/nuwanbando/wso2-apim-distributed-deployment/master/artifacts/userdb.sql && \
+        wget https://raw.githubusercontent.com/nuwanbando/wso2-apim-distributed-deployment/master/artifacts/regdb.sql && \
+        cp apimdb.sql /docker-entrypoint-initdb.d/ && \
+        cp userdb.sql /docker-entrypoint-initdb.d/ && \
+        cp regdb.sql /docker-entrypoint-initdb.d/
 
 EXPOSE 3306
