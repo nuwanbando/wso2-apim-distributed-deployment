@@ -1,0 +1,11 @@
+version: '2'
+services:
+  bookshopdb:
+    container_name: database
+    build: 
+        context: .
+        dockerfile: apimdb.dfile
+    ports:
+     - "3306:3306"
+    environment:
+        MYSQL_ROOT_PASSWORD: root

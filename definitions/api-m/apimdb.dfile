@@ -1,0 +1,10 @@
+FROM mysql
+
+RUN apt-get update && apt-get install -y \
+        unzip \
+        wget && \
+        cd / && \
+        wget https://raw.githubusercontent.com/nuwanbando/bookshop-sample/master/artifacts/bookshop_orders.sql && \
+        cp bookshop_orders.sql /docker-entrypoint-initdb.d/
+
+EXPOSE 3306
