@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.6.24, for osx10.8 (x86_64)
 --
--- Host: 127.0.0.1    Database: book
+-- Host: 127.0.0.1    Database: bookshop
 -- ------------------------------------------------------
 -- Server version 5.6.15
 
@@ -16,22 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping data for table `books`
+-- Table structure for table `orders`
 --
 
-LOCK TABLES `books` WRITE;
-/*!40000 ALTER TABLE `books` DISABLE KEYS */;
-INSERT INTO `books` VALUES (1,'wso2eip','nuwan'),(2,'wso2security','nuwan'),(1,'wso2eip','nuwan'),(2,'wso2security','nuwan'),(3,'newbook','nuwan_new');
-/*!40000 ALTER TABLE `books` ENABLE KEYS */;
-UNLOCK TABLES;
+DROP TABLE IF EXISTS `bookshop`.`orders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bookshop`.`orders` (
+  `orderId` varchar(45) NOT NULL,
+  `bookId` varchar(45) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `reviewed` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`orderId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping events for database 'book'
---
+DROP TABLE IF EXISTS `bookshop`.`customer`;
 
---
--- Dumping routines for database 'book'
---
+CREATE TABLE `bookshop`.`customer` (
+  `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
+  `name` VARCHAR(45) NULL COMMENT '',
+  `email` VARCHAR(45) NULL COMMENT '',
+  PRIMARY KEY (`id`)  COMMENT '');
+/*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -42,49 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-25 12:01:00
--- MySQL dump 10.13  Distrib 5.6.24, for osx10.8 (x86_64)
---
--- Host: 127.0.0.1    Database: book_orders
--- ------------------------------------------------------
--- Server version 5.6.15
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Dumping data for table `orders`
---
-
-LOCK TABLES `orders` WRITE;
-/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,'111','1'),(2,'111','1'),(3,'111','0'),(4,'111','0'),(5,'111','0'),(6,'111','0'),(7,'10','0'),(8,'1112222','0'),(9,'1112222','0'),(10,'1112222','0'),(11,'1112222','0');
-/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping events for database 'book_orders'
---
-
---
--- Dumping routines for database 'book_orders'
---
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2016-03-25 12:01:00
+-- Dump completed on 2016-03-21 22:14:30
