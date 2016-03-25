@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y \
         unzip \
         wget && \
         cd / && \
-        wget https://raw.githubusercontent.com/nuwanbando/bookshop-sample/master/artifacts/bookshop_orders.sql && \
-        cp bookshop_orders.sql /docker-entrypoint-initdb.d/
+        wget https://raw.githubusercontent.com/nuwanbando/wso2-apim-distributed-deployment/master/artifacts/apimdb.sql && \
+        cp apimdb.sql /docker-entrypoint-initdb.d/
 
 EXPOSE 3306
