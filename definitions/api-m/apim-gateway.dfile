@@ -9,11 +9,20 @@ RUN apt-get update && apt-get install -y \
         wget -U 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.6) Gecko/20070802 SeaMonkey/1.1.4' http://product-dist.wso2.com/products/api-manager/1.10.0/wso2am-1.10.0.zip && \
         unzip wso2am-1.10.0.zip && \
         wget https://github.com/nuwanbando/bookshop-sample/raw/master/artifacts/mysql-connector-java-5.1.34-bin.jar && \
-        cp mysql-connector-java-5.1.34-bin.jar wso2am-1.10.0/repository/components/lib/
+        wget https://raw.githubusercontent.com/nuwanbando/wso2-apim-distributed-deployment/master/configs/gateway/api-manager.xml && \
+        wget https://raw.githubusercontent.com/nuwanbando/wso2-apim-distributed-deployment/master/configs/gateway/master-datasources.xml && \
+        wget https://raw.githubusercontent.com/nuwanbando/wso2-apim-distributed-deployment/master/configs/gateway/registry.xml && \
+        wget https://raw.githubusercontent.com/nuwanbando/wso2-apim-distributed-deployment/master/configs/gateway/user-mgt.xml && \
+        cp mysql-connector-java-5.1.34-bin.jar wso2am-1.10.0/repository/components/lib/ && \
+        cp api-manager.xml wso2am-1.10.0/repository/conf/ && \
+        cp master-datasources.xml wso2am-1.10.0/repository/conf/ && \
+        cp registry.xml wso2am-1.10.0/repository/conf/ && \
+        cp user-mgt.xml wso2am-1.10.0/repository/conf/
 
-CMD ["sh", "/wso2/wso2esb-4.9.0/bin/wso2server.sh"]
+CMD ["sh", "/wso2/wso2am-1.10.0/bin/wso2server.sh"]
 
-EXPOSE 9773
-EXPOSE 9453
-EXPOSE 8290
-EXPOSE 8253
+EXPOSE 9763
+EXPOSE 9443
+EXPOSE 8280
+EXPOSE 8243
+EXPOSE 10397

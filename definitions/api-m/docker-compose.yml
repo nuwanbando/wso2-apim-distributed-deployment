@@ -1,7 +1,7 @@
 version: '2'
 services:
   apimrdbms:
-    container_name: database
+    container_name: apim_apimrdbms
     build: 
         context: .
         dockerfile: apimdb.dfile
@@ -9,3 +9,15 @@ services:
      - "3306:3306"
     environment:
         MYSQL_ROOT_PASSWORD: root
+  gateway:
+    container_name: apim_gateway
+    depends_on: 
+      - apimrdbms
+    build:
+      context: .
+      dockerfile: apim-gateway.dfile
+    ports:
+      - "9763:9763"
+      - "9443:9443"
+      - "8280:8280"
+      - "8243:8243"
