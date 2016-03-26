@@ -21,3 +21,33 @@ services:
       - "9443:9443"
       - "8280:8280"
       - "8243:8243"
+  km:
+    container_name: apim_km
+    depends_on: 
+      - apimrdbms
+    build:
+      context: .
+      dockerfile: apim-km.dfile
+    ports:
+      - "9763:9764"
+      - "9443:9444"
+  publisher:
+    container_name: apim_publisher
+    depends_on: 
+      - apimrdbms
+    build:
+      context: .
+      dockerfile: apim-publisher.dfile
+    ports:
+      - "9763:9765"
+      - "9443:9445"
+  store:
+    container_name: apim_store
+    depends_on: 
+      - apimrdbms
+    build:
+      context: .
+      dockerfile: apim-store.dfile
+    ports:
+      - "9763:9766"
+      - "9443:9446"

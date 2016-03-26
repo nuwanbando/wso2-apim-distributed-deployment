@@ -36,8 +36,8 @@
          <definition type="RDBMS">
            <configuration>
              <url>jdbc:mysql://apim_apimrdbms:3306/apimgtdb?autoReconnect=true</url>
-             <username>user</username>
-             <password>password</password>
+             <username>root</username>
+             <password>root</password>
              <defaultAutoCommit>false</defaultAutoCommit>
              <driverClassName>com.mysql.jdbc.Driver</driverClassName>
              <maxActive>50</maxActive>
@@ -80,8 +80,8 @@
          <definition type="RDBMS">
            <configuration>
              <url>jdbc:mysql://apim_apimrdbms:3306/userdb?autoReconnect=true</url>
-             <username>user</username>
-             <password>password</password>
+             <username>root</username>
+             <password>root</password>
              <driverClassName>com.mysql.jdbc.Driver</driverClassName>
              <maxActive>50</maxActive>
              <maxWait>60000</maxWait>
