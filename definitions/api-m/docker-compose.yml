@@ -29,8 +29,8 @@ services:
       context: .
       dockerfile: apim-km.dfile
     ports:
-      - "9763:9764"
-      - "9443:9444"
+      - "9764:9763"
+      - "9444:9443"
   publisher:
     container_name: apim_publisher
     depends_on: 
@@ -39,8 +39,8 @@ services:
       context: .
       dockerfile: apim-publisher.dfile
     ports:
-      - "9763:9765"
-      - "9443:9445"
+      - "9765:9763"
+      - "9445:9443"
   store:
     container_name: apim_store
     depends_on: 
@@ -49,5 +49,5 @@ services:
       context: .
       dockerfile: apim-store.dfile
     ports:
-      - "9763:9766"
-      - "9443:9446"
+      - "9766:9763"
+      - "9446:9443"

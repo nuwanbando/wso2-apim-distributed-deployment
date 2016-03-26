@@ -92,7 +92,7 @@
          </definition>
         </datasource>
 
-        <!--datasource>
+        <datasource>
          <name>WSO2REG_DB</name>
          <description>The datasource used by the registry</description>
          <jndiConfig>
@@ -101,8 +101,8 @@
          <definition type="RDBMS">
            <configuration>
              <url>jdbc:mysql://apim_apimrdbms:3306/regdb?autoReconnect=true</url>
-             <username>user</username>
-             <password>password</password>
+             <username>root</username>
+             <password>root</password>
              <driverClassName>com.mysql.jdbc.Driver</driverClassName>
              <maxActive>50</maxActive>
              <maxWait>60000</maxWait>
@@ -111,7 +111,7 @@
              <validationInterval>30000</validationInterval>
            </configuration>
          </definition>
-        </datasource-->
+        </datasource>
 
         <!--datasource>
             <name>WSO2_SOCIAL_DB</name>
