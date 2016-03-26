@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
         wget https://raw.githubusercontent.com/nuwanbando/wso2-apim-distributed-deployment/master/configs/gateway/user-mgt.xml && \
         cp mysql-connector-java-5.1.34-bin.jar wso2am-1.10.0/repository/components/lib/ && \
         cp api-manager.xml wso2am-1.10.0/repository/conf/ && \
-        cp master-datasources.xml wso2am-1.10.0/repository/conf/ && \
+        cp master-datasources.xml wso2am-1.10.0/repository/conf/datasources/ && \
         cp registry.xml wso2am-1.10.0/repository/conf/ && \
         cp user-mgt.xml wso2am-1.10.0/repository/conf/
 
