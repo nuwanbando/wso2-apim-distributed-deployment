@@ -41,6 +41,7 @@ services:
     ports:
       - "9765:9763"
       - "9445:9443"
+      - "4000"
   store:
     container_name: apim_store
     depends_on: 
@@ -51,3 +52,4 @@ services:
     ports:
       - "9766:9763"
       - "9446:9443"
+      - "4000"
