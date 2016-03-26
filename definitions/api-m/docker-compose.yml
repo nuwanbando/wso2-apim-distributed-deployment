@@ -1,6 +1,6 @@
 version: '2'
 services:
-  bookshopdb:
+  apimrdbms:
     container_name: database
     build: 
         context: .
