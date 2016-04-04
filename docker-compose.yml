@@ -13,6 +13,7 @@ services:
     container_name: apim_gateway
     depends_on: 
       - dbms
+      - das
     build:
       context: .
       dockerfile: gateway/Dockerfile
@@ -53,3 +54,13 @@ services:
       - "9766:9763"
       - "9446:9443"
       - "4000"
+  das:
+    container_name: apim_das
+    depends_on: 
+      - dbms
+    build:
+      context: .
+      dockerfile: das/Dockerfile
+    ports:
+      - "9767:9763"
+      - "9447:9443"

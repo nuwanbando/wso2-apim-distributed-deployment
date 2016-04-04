@@ -12,6 +12,11 @@ COPY gateway/api-manager.xml /wso2/wso2am-1.10.0/repository/conf/
 COPY gateway/master-datasources.xml /wso2/wso2am-1.10.0/repository/conf/datasources/
 COPY gateway/registry.xml /wso2/wso2am-1.10.0/repository/conf/
 COPY gateway/user-mgt.xml /wso2/wso2am-1.10.0/repository/conf/
+COPY gateway/axis2.xml /wso2/wso2am-1.10.0/repository/conf/axis2/
+COPY gateway/_AuthorizeAPI_.xml /wso2/wso2am-1.10.0/repository/deployment/server/synapse-configs/default/api/
+COPY gateway/_TokenAPI_.xml /wso2/wso2am-1.10.0/repository/deployment/server/synapse-configs/default/api/
+COPY gateway/_RevokeAPI_.xml /wso2/wso2am-1.10.0/repository/deployment/server/synapse-configs/default/api/
+COPY gateway/_UserInfoAPI_.xml /wso2/wso2am-1.10.0/repository/deployment/server/synapse-configs/default/api/
 
 CMD ["sh", "/wso2/wso2am-1.10.0/bin/wso2server.sh"]
 
